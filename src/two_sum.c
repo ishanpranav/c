@@ -1,5 +1,5 @@
-#include "system/console.h"
-#include "system/collections/generic/dictionary.h"
+#include <stdio.h>
+#include "lib/int_hashtable.h"
 
 int main()
 {

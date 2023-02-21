@@ -1,12 +1,11 @@
-#include "system/boolean.h"
-#include "system/console.h"
+#include <stdbool.h>
 #include <stdio.h>
 
 /**
- * Returns true if a given integer is a palindrome in decimal notation.
+ * Determines whether a given integer is a palindrome in decimal notation.
  * 
  * @param value the integer
- * @return 1 if the given integer is a palindrome; otherwise, 0.
+ * @return true if the given integer is a palindrome; otherwise, false.
 */
 bool isPalindrome(int value)
 {
@@ -42,7 +41,14 @@ int main()
 
     while (scanf("%d", &value))
     {
-        printf("%s\n", btoa(isPalindrome(value)));
+        if (isPalindrome(value))
+        {
+            printf("palindrome\n");
+        }
+        else
+        {
+            printf("non-palindrome\n");
+        }
     }
 
     return 0;

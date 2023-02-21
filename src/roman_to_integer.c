@@ -1,4 +1,5 @@
-#include "system/console.h"
+#include <stdio.h>
+#define MAX_LENGTH 15
 
 /**
  * Converts a single-character Roman numeral to an integer.
@@ -73,14 +74,19 @@ int romanToInt(char *value)
 
 int main()
 {
-    char buffer[16];
+    char buffer[MAX_LENGTH + 1];
     char *bufferReference = buffer;
-    size_t capacity = 16;
+    size_t capacity = MAX_LENGTH + 1;
     size_t count;
 
     do
     {
         count = getline(&bufferReference, &capacity, stdin);
+
+        if (count > MAX_LENGTH)
+        {
+            return 1;
+        }
 
         printf("%d\n", romanToInt(bufferReference));
     } while (count > 1);
