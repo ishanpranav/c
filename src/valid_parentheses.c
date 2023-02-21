@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "lib/char_stack.h"
+#include "../lib/char_stack.h"
 #define MAX_LENGTH 10000
 
 /**

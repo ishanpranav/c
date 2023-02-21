@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "lib/int_hashtable.h"
+#include "../lib/int_hashtable.h"
 
 int main()
 {
