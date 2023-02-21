@@ -1,2 +1,2 @@
 # c
-LeetCode solutions in pure c
+LeetCode solutions in pure C
