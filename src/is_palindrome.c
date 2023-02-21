@@ -1,4 +1,5 @@
-#include "lib/boolean.h"
+#include "system/boolean.h"
+#include "system/console.h"
 #include <stdio.h>
 
 /**
@@ -35,11 +36,6 @@ bool isPalindrome(int x)
     return x == reversed || x == reversed / 10;
 }
 
-/**
- * The main entry point for the application.
- * 
- * @return An exit code. This value is always 0, indicating success.
- */
 int main()
 {
     int x;

@@ -1,4 +1,5 @@
-#include "lib/dictionary.h"
+#include "system/console.h"
+#include "system/collections/generic/dictionary.h"
 
 int main()
 {
