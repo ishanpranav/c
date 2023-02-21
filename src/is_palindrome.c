@@ -1,6 +1,5 @@
-#include <stdbool.h>
+#include "lib/boolean.h"
 #include <stdio.h>
-#define btoa(x) ((x) ? "true" : "false")
 
 /**
  * Returns true if a given integer is a palindrome in decimal notation.
