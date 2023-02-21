@@ -5,44 +5,44 @@
 /**
  * Returns true if a given integer is a palindrome in decimal notation.
  * 
- * @param x the integer
+ * @param value the integer
  * @return 1 if the given integer is a palindrome; otherwise, 0.
 */
-bool isPalindrome(int x)
+bool isPalindrome(int value)
 {
-    if (x < 0)
+    if (value < 0)
     {
         return false;
     }
 
-    if (x == 0)
+    if (value == 0)
     {
         return true;
     }
 
-    if (x % 10 == 0)
+    if (value % 10 == 0)
     {
         return false;
     }
 
     int reversed = 0;
 
-    while (x > reversed)
+    while (value > reversed)
     {
-        reversed = (reversed * 10) + (x % 10);
-        x /= 10;
+        reversed = (reversed * 10) + (value % 10);
+        value /= 10;
     }
 
-    return x == reversed || x == reversed / 10;
+    return value == reversed || value == reversed / 10;
 }
 
 int main()
 {
-    int x;
+    int value;
 
-    while (scanf("%d", &x))
+    while (scanf("%d", &value))
     {
-        printf("%s\n", btoa(isPalindrome(x)));
+        printf("%s\n", btoa(isPalindrome(value)));
     }
 
     return 0;
