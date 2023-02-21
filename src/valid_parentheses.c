@@ -15,6 +15,11 @@
  */
 bool isValid(char *value)
 {
+    if (value == NULL)
+    {
+        return false;
+    }
+    
     struct CharStack *stack = char_stack();
 
     while (*value)

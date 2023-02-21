@@ -54,7 +54,7 @@ int getLength(char **values, int count)
  */
 char *longestCommonPrefix(char **values, int count)
 {
-    if (count == 0)
+    if (values == NULL || count == 0)
     {
         return "";
     }

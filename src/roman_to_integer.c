@@ -51,6 +51,11 @@ int numeralToInt(char value)
  */
 int romanToInt(char *value)
 {
+    if (value == NULL)
+    {
+        return 0;
+    }
+
     int result = 0;
 
     while (*value)

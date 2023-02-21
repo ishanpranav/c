@@ -87,5 +87,6 @@ bool char_stack_try_pop(struct CharStack *this, char *result)
 
 void finalize_char_stack(struct CharStack *this)
 {
+    free(this->array);
     free(this);
 }
