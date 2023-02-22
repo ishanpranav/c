@@ -1,5 +1,5 @@
 CC		= gcc
-CFLAGS	= -g -Wall -Werror
+CFLAGS	= -g -Wall
 
 all: \
 	is_palindrome \
@@ -12,7 +12,7 @@ all: \
 char_stack:
 	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
 
-int_list:
+int_linked_list:
 	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
 
 is_palindrome: src/is_palindrome.c
@@ -22,10 +22,10 @@ longest_common_prefix: src/longest_common_prefix.c
 	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe
 
 merge_two_sorted_lists: \
-	int_list \
+	int_linked_list \
 	src/merge_two_sorted_lists.c
 	
-	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe
+	$(CC) $(CFLAGS) src/$@.c obj/int_linked_list.o -o bin/$@.exe
 
 roman_to_integer: src/roman_to_integer.c
 	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe

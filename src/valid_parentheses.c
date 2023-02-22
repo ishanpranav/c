@@ -13,7 +13,7 @@
  * @param value a pointer to a zero-terminated input string
  * @return true if the given string is valid; otherwise, false.
  */
-bool isValid(char *value)
+static bool isValid(char *value)
 {
     if (value == NULL)
     {
@@ -44,7 +44,7 @@ bool isValid(char *value)
         case ')':
         case ']':
         case '}':
-            if (!char_stack_get_count(stack))
+            if (!char_stack_count(stack))
             {
                 finalize_char_stack(stack);
 
@@ -70,7 +70,7 @@ bool isValid(char *value)
         value++;
     }
 
-    int result = !char_stack_get_count(stack);
+    int result = !char_stack_count(stack);
 
     finalize_char_stack(stack);
 

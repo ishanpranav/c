@@ -1,13 +1,7 @@
 #include <stdio.h>
 #define MAX_LENGTH 15
 
-/**
- * Converts a single-character Roman numeral to an integer.
- *
- * @param value the Roman numeral
- * @return The integral represetation of the Roman numeral.
- */
-int numeralToInt(char value)
+static int numeralToInt(char value)
 {
     switch (value)
     {
@@ -49,7 +43,7 @@ int numeralToInt(char value)
  * @param value a pointer to a zero-terminated Roman numeral string
  * @return The integral representation of the Roman numeral string.
  */
-int romanToInt(char *value)
+static int romanToInt(char *value)
 {
     if (value == NULL)
     {

@@ -20,7 +20,7 @@ struct CharStack *char_stack();
  * @param this a pointer to the current instance
  * @return The number of characters contained in the stack.
  */
-int char_stack_get_count(struct CharStack *this);
+int char_stack_count(struct CharStack *this);
 
 /**
  * Ensures that the capacity of this stack is at least the specified capacity.
@@ -55,7 +55,8 @@ void char_stack_push(struct CharStack *this, char item);
 bool char_stack_try_pop(struct CharStack *this, char *result);
 
 /**
- * Allows the character stack to free resources and perform other cleanup operations.
+ * Allows the character stack to free resources and perform other cleanup
+ * operations.
  *
  * @param this a pointer to the current instance
  */

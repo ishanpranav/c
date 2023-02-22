@@ -7,7 +7,7 @@
  * @param value the integer
  * @return true if the given integer is a palindrome; otherwise, false.
 */
-bool isPalindrome(int value)
+static bool isPalindrome(int value)
 {
     if (value < 0)
     {

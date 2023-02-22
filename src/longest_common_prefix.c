@@ -3,15 +3,7 @@
 #include <string.h>
 #define MAX_LENGTH 200
 
-/**
- * Gets the length of the longest common prefix string amongst an array of
- * strings.
- *
- * @param values a pointer to an array of pointers to zero-terminated strings
- * @param count the number of elements in the given array
- * @return The length of the longest common prefix string.
- */
-int getLength(char **values, int count)
+static int getLength(char **values, int count)
 {
     int length = 0;
     int min = strlen(values[0]);
@@ -52,7 +44,7 @@ int getLength(char **values, int count)
  * @param count the number of elements in the given array
  * @return The longest common prefix as a zero-terminated string.
  */
-char *longestCommonPrefix(char **values, int count)
+static char *longestCommonPrefix(char **values, int count)
 {
     if (values == NULL || count == 0)
     {

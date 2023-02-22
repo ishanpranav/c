@@ -21,12 +21,12 @@ struct CharStack *char_stack()
     return instance;
 }
 
-int char_stack_get_count(struct CharStack *this)
+int char_stack_count(struct CharStack *this)
 {
     return this->count;
 }
 
-void grow(struct CharStack *this, int min)
+static void grow(struct CharStack *this, int min)
 {
     this->capacity *= 2;
 
