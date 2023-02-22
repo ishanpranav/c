@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdio.h>
 #define MAX_LENGTH 3000
 
@@ -6,11 +7,13 @@
  * duplicates in-place such that each unique element appears only once.
  * The relative order of the elements remains the same.
  *
- * @param values a pointer to an integer array
+ * @param values a pointer to a sorted integer array
  * @param count the number of elements in the array
  * @return The number of unique elements in the array. The indices ranging from
  *         0 (inclusive) to the return value (exclusive) contain the distinct
- *         values. If the return value is zero, then the array is empty.
+ *         values. If the return value is zero, then the array is empty. If
+ *         this function is called with a non-sorted array, the return value
+ *         can be incorrect.
  */
 static int removeDuplicates(int *values, int count)
 {
@@ -36,19 +39,18 @@ int main()
     int values[MAX_LENGTH];
     int current;
     int count = 0;
-    int previous = -1;
+    int previous = INT_MIN;
 
     while (scanf("%d", &current))
     {
-        values[count] = current;
-        count++;
-
         if (current < previous || count == MAX_LENGTH)
         {
-            count = removeDuplicates(values, count);
-
             break;
         }
+
+        values[count] = current;
+        previous = current;
+        count++;
     }
 
     count = removeDuplicates(values, count);

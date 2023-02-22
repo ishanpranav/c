@@ -8,13 +8,20 @@ all: \
 	remove_duplicates_from_sorted_array \
 	remove_element \
 	roman_to_integer \
+	search_insert_position \
 	two_sum \
 	valid_parentheses
 
-char_stack:
+char_stack: lib/char_stack.c
 	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
 
-int_linked_list:
+int_array: lib/int_array.c
+	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
+
+int_hashtable: lib/int_hashtable.c
+	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
+
+int_linked_list: lib/int_linked_list.c
 	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
 
 is_palindrome: src/is_palindrome.c
@@ -38,7 +45,16 @@ remove_element: src/remove_element.c
 roman_to_integer: src/roman_to_integer.c
 	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe
 
-two_sum: src/two_sum.c
+search_insert_position: \
+	int_array \
+	src/search_insert_position.c
+
+	$(CC) $(CFLAGS) src/$@.c obj/int_array.o -o bin/$@.exe
+
+two_sum: \
+	int_hashtable \
+	src/two_sum.c
+
 	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe
 
 valid_parentheses: \

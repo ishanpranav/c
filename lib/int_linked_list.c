@@ -64,7 +64,7 @@ void int_linked_list_clear(struct IntLinkedList *this)
     while (this->head)
     {
         struct IntLinkedListNode *next = this->head;
-        
+
         this->head = this->head->next;
 
         free(next);

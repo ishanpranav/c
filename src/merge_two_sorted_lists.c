@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdio.h>
 #include "../lib/int_linked_list.h"
 
@@ -5,11 +6,13 @@
  * Merges two linked lists sorted in non-decreasing order into one list sorted
  * in non-decreasing order. The list is created by splicing together the nodes
  * of the first two lists.
- * 
- * @param first a pointer to the first linked list
- * @param second a pointer to the second linked list
+ *
+ * @param first a pointer to the first sorted linked list
+ * @param second a pointer to the second sorted linked list
  * @return A pointer to linked list created by (destructively) splicing
- *         together the nodes of the first two linked lists.
+ *         together the nodes of the first two linked lists. If this function
+ *         is called with non-sorted linked lists, the return value can be
+ *         incorrect.
  */
 static struct IntLinkedList *mergeTwoSortedLists(
     struct IntLinkedList *first,
@@ -52,7 +55,7 @@ static struct IntLinkedList *getMerged()
 {
     int current;
     int pass = 0;
-    int previous = -1;
+    int previous = INT_MIN;
     struct IntLinkedList *first = int_linked_list();
     struct IntLinkedList *second = int_linked_list();
 

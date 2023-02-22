@@ -26,10 +26,10 @@ struct IntLinkedListNode *int_linked_list_first(struct IntLinkedList *this);
 
 /**
  * Gets the last node of the integer linked list.
- * 
+ *
  * @param this a pointer to the current instance
  * @return A pointer to the last node of the integer linked list.
-*/
+ */
 struct IntLinkedListNode *int_linked_list_last(struct IntLinkedList *this);
 
 /**
@@ -54,9 +54,9 @@ void int_linked_list_add_last(
 
 /**
  * Removes all nodes from the integer linked list.
- * 
+ *
  * @param this a pointer to the current instance
-*/
+ */
 void int_linked_list_clear(struct IntLinkedList *this);
 
 /**

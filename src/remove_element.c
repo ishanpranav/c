@@ -6,12 +6,14 @@
  * occurences of a given value in-place. The relative order of the elements may
  * be changed.
  *
- * @param values a pointer to an integer array
+ * @param values a pointer to a sorted integer array
  * @param count the number of elements in the array
+ * @param value the value to remove
  * @return The number of meaningful elements in the array. The indices ranging
  *         from 0 (inclusive) to the return value (exclusive) contain the
  *         trimmed values. If the return value is zero, then the array is
- *         empty.
+ *         empty. If this function is called with a non-sorted array, the
+ *         return value can be incorrect.
  */
 static int removeElement(int *values, int count, int value)
 {
@@ -42,6 +44,11 @@ int main()
 
     while (scanf("%d", &current))
     {
+        if (count == MAX_LENGTH)
+        {
+            break;
+        }
+        
         values[count] = current;
         count++;
     }
