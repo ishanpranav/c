@@ -34,8 +34,8 @@ static int removeDuplicates(int *values, int count)
 int main()
 {
     int values[MAX_LENGTH];
+    int current;
     int count = 0;
-    int current = 0;
     int previous = -1;
 
     while (scanf("%d", &current))
@@ -60,7 +60,7 @@ int main()
         printf("%d ", values[i]);
     }
 
-    printf("]");
+    printf("]\n");
 
     return 0;
 }

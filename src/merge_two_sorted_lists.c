@@ -50,8 +50,8 @@ static struct IntLinkedList *mergeTwoSortedLists(
 
 static struct IntLinkedList *getMerged()
 {
+    int current;
     int pass = 0;
-    int current = 0;
     int previous = -1;
     struct IntLinkedList *first = int_linked_list();
     struct IntLinkedList *second = int_linked_list();

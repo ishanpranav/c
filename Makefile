@@ -5,6 +5,8 @@ all: \
 	is_palindrome \
 	longest_common_prefix \
 	merge_two_sorted_lists \
+	remove_duplicates_from_sorted_array \
+	remove_element \
 	roman_to_integer \
 	two_sum \
 	valid_parentheses
@@ -26,6 +28,12 @@ merge_two_sorted_lists: \
 	src/merge_two_sorted_lists.c
 	
 	$(CC) $(CFLAGS) src/$@.c obj/int_linked_list.o -o bin/$@.exe
+
+remove_duplicates_from_sorted_array: src/remove_duplicates_from_sorted_array.c
+	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe
+
+remove_element: src/remove_element.c
+	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe
 
 roman_to_integer: src/roman_to_integer.c
 	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe
