@@ -2,13 +2,14 @@
 #include "../lib/int_linked_list.h"
 
 /**
- * Merges two sorted linked lists into one list. The list is created by
- * splicing together the nodes of the first two lists.
+ * Merges two linked lists sorted in non-decreasing order into one list sorted
+ * in non-decreasing order. The list is created by splicing together the nodes
+ * of the first two lists.
  * 
- * @param first the first linked list
- * @param second the second linked list
- * @return A third list created by (destructively) splicing together the nodes
- *         of the first two lists.
+ * @param first a pointer to the first linked list
+ * @param second a pointer to the second linked list
+ * @return A pointer to linked list created by (destructively) splicing
+ *         together the nodes of the first two linked lists.
  */
 static struct IntLinkedList *mergeTwoSortedLists(
     struct IntLinkedList *first,
@@ -50,14 +51,14 @@ static struct IntLinkedList *mergeTwoSortedLists(
 static struct IntLinkedList *getMerged()
 {
     int pass = 0;
-    int value = 0;
+    int current = 0;
     int previous = -1;
     struct IntLinkedList *first = int_linked_list();
     struct IntLinkedList *second = int_linked_list();
 
-    while (scanf("%d", &value))
+    while (scanf("%d", &current))
     {
-        if (value < previous)
+        if (current < previous)
         {
             pass++;
         }
@@ -65,18 +66,18 @@ static struct IntLinkedList *getMerged()
         switch (pass)
         {
         case 0:
-            int_linked_list_add(first, value);
+            int_linked_list_add(first, current);
             break;
 
         case 1:
-            int_linked_list_add(second, value);
+            int_linked_list_add(second, current);
             break;
 
         default:
             return mergeTwoSortedLists(first, second);
         }
 
-        previous = value;
+        previous = current;
     }
 
     return mergeTwoSortedLists(first, second);
