@@ -12,6 +12,12 @@ all: \
 	two_sum \
 	valid_parentheses
 
+lib:
+	char_stack \
+	int_array \
+	int_dictionary \
+	int_linked_list
+
 char_stack: lib/char_stack.c
 	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
 
