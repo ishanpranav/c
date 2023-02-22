@@ -1,6 +1,7 @@
 # C
 This is a collection of LeetCode solutions implemented in pure C. This project
-has no dependencies aside from the C standard library.
+has no dependencies aside from the C standard library (`libc`) and its
+mathematics extensions (`libm`).
 ## Compilation
 To compile this project from the source code, clone this repository and run:
 ```

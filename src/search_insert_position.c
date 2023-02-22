@@ -34,7 +34,10 @@ int main()
     int values[MAX_LENGTH];
     int count = 0;
 
-    scanf("%d", &value);
+    if (!scanf("%d", &value))
+    {
+        return 1;
+    }
 
     while (scanf("%d", &current))
     {
@@ -48,7 +51,7 @@ int main()
         count++;
     }
 
-    printf("%d\n", searchInsert(values, count, value));
+    printf("@%d\n", searchInsert(values, count, value));
 
     return 0;
 }

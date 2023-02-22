@@ -1,3 +1,5 @@
+// https://github.com/dotnet/runtime/blob/main/src/libraries/System.Collections/src/System/Collections/Generic/LinkedList.cs
+
 #include <stdlib.h>
 #include "int_linked_list.h"
 
@@ -15,12 +17,12 @@ struct IntLinkedListNode
 
 struct IntLinkedList *int_linked_list()
 {
-    struct IntLinkedList *result = malloc(sizeof(struct IntLinkedList));
+    struct IntLinkedList *instance = malloc(sizeof(struct IntLinkedList));
 
-    result->head = NULL;
-    result->tail = NULL;
+    instance->head = NULL;
+    instance->tail = NULL;
 
-    return result;
+    return instance;
 }
 
 struct IntLinkedListNode *int_linked_list_first(struct IntLinkedList *this)

@@ -18,7 +18,7 @@ char_stack: lib/char_stack.c
 int_array: lib/int_array.c
 	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
 
-int_hashtable: lib/int_hashtable.c
+int_dictionary: lib/int_dictionary.c
 	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
 
 int_linked_list: lib/int_linked_list.c
@@ -52,10 +52,10 @@ search_insert_position: \
 	$(CC) $(CFLAGS) src/$@.c obj/int_array.o -o bin/$@.exe
 
 two_sum: \
-	int_hashtable \
+	int_dictionary \
 	src/two_sum.c
 
-	$(CC) $(CFLAGS) src/$@.c -o bin/$@.exe
+	$(CC) $(CFLAGS) src/$@.c obj/int_dictionary.o -lm -o bin/$@.exe
 
 valid_parentheses: \
 	char_stack \

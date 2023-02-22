@@ -1,3 +1,6 @@
+// https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1
+// https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlistnode-1
+
 /**
  * Represents a singly linked list.
  */

@@ -40,8 +40,11 @@ int main()
     int values[MAX_LENGTH];
     int count = 0;
 
-    scanf("%d", &value);
-
+    if (!scanf("%d", &value))
+    {
+        return 1;
+    }
+    
     while (scanf("%d", &current))
     {
         if (count == MAX_LENGTH)

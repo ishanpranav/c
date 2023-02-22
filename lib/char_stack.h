@@ -1,3 +1,5 @@
+// https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1
+
 #include <stdbool.h>
 
 /**
@@ -23,13 +25,12 @@ struct CharStack *char_stack();
 int char_stack_count(struct CharStack *this);
 
 /**
- * Ensures that the capacity of this stack is at least the specified capacity.
- * If the current capacity is less than capacity, it is successively increased
- * to twice the current capacity until it is at least the specified capacity.
+ * Ensures that the stack can hold up to a specified number of entries without
+ * any further expansion of its backing storage.
  *
  * @param this a pointer to the current instance
- * @param capacity the minimum capacity to ensure.
- * @return The new capacity of this stack.
+ * @param capacity the minimum capacity to ensure
+ * @return The new capacity of the stack.
  */
 int char_stack_ensure_capacity(struct CharStack *this, int capacity);
 
@@ -47,8 +48,9 @@ void char_stack_push(struct CharStack *this, char item);
  * removes it from the stack.
  *
  * @param this a pointer to the current instance
- * @param result if present, the character at the top of the stack; otherwise,
- *               an undefined value.
+ * @param result when this method returns, contains the value at the top of the
+ *               stack, if present; otherwise, an undefined value. This
+ *               parameter is passed uninitialized.
  * @return true if there is a character at the top of the stack; false if the
  *         stack is empty.
  */

@@ -1,3 +1,5 @@
+// https://github.com/dotnet/runtime/blob/main/src/libraries/System.Collections/src/System/Collections/Generic/Stack.cs
+
 #include <math.h>
 #include <stdlib.h>
 #include "char_stack.h"
@@ -52,10 +54,12 @@ static void grow(struct CharStack *this, int min)
 
 int char_stack_ensure_capacity(struct CharStack *this, int capacity)
 {
-    if (this->capacity < capacity)
+    if (this->capacity >= capacity)
     {
-        grow(this, capacity);
+        return this->capacity;
     }
+
+    grow(this, capacity);
 
     return this->capacity;
 }
