@@ -3,6 +3,8 @@ CFLAGS	= -g -Wall
 EXT		= .exe
 
 all: \
+	add_binary \
+	climbing_stairs \
 	is_palindrome \
 	length_of_last_word \
 	longest_common_prefix \
@@ -34,6 +36,9 @@ int_linked_list: lib/int_linked_list.c
 	$(CC) $(CFLAGS) -c lib/$@.c -o obj/$@.o
 
 add_binary: src/add_binary.c
+	$(CC) $(CFLAGS) src/$@.c -o bin/$@$(EXT)
+
+climbing_stairs: src/climbing_stairs.c
 	$(CC) $(CFLAGS) src/$@.c -o bin/$@$(EXT)
 
 is_palindrome: src/is_palindrome.c
