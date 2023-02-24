@@ -14,7 +14,7 @@ struct CharStack
 
 struct CharStack *char_stack()
 {
-    struct CharStack *instance = malloc(sizeof(struct CharStack));
+    struct CharStack *instance = malloc(sizeof *instance);
 
     instance->count = 0;
     instance->capacity = 0;
@@ -44,11 +44,11 @@ static void grow(struct CharStack *this, int min)
 
     if (this->array == NULL)
     {
-        this->array = malloc(sizeof(char) * this->capacity);
+        this->array = malloc(sizeof *this->array * this->capacity);
     }
     else
     {
-        this->array = realloc(this->array, sizeof(char) * this->capacity);
+        this->array = realloc(this->array, sizeof *this->array * this->capacity);
     }
 }
 

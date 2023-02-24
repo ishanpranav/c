@@ -14,7 +14,7 @@
  *         that this value is equal to the other value; a return value greater
  *         than 1 indicates that this value is greater than the other value.
  */
-int int_compare_to(int value, int other)
+inline int int_compare_to(int value, int other)
 {
     return value - other;
 }
@@ -28,7 +28,7 @@ int int_compare_to(int value, int other)
  * @return true if the other value has the same value as this value; otherwise,
  *         false.
  */
-bool int_equals(int value, int other)
+inline bool int_equals(int value, int other)
 {
     return value == other;
 }

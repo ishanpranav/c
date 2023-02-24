@@ -17,7 +17,7 @@ struct IntLinkedListNode
 
 struct IntLinkedList *int_linked_list()
 {
-    struct IntLinkedList *instance = malloc(sizeof(struct IntLinkedList));
+    struct IntLinkedList *instance = malloc(sizeof *instance);
 
     instance->head = NULL;
     instance->tail = NULL;
@@ -37,7 +37,7 @@ struct IntLinkedListNode *int_linked_list_last(struct IntLinkedList *this)
 
 void int_linked_list_add(struct IntLinkedList *this, int value)
 {
-    struct IntLinkedListNode *node = malloc(sizeof(struct IntLinkedListNode));
+    struct IntLinkedListNode *node = malloc(sizeof *node);
 
     node->item = value;
     node->next = NULL;

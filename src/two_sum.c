@@ -10,7 +10,7 @@
  * @param count the number of elements in the array
  * @param value the sum to achieve
  */
-void twoSum(int *values, int count, int sum, int *first, int *second)
+static void twoSum(int *values, int count, int sum, int *first, int *second)
 {
     struct IntDictionary *dictionary = int_dictionary();
 

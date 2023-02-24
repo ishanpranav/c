@@ -14,7 +14,7 @@
  * @return The index if the value is found; otherwise, the index where it
  *         would be if it were inserted in order.
  */
-int searchInsert(int *values, int count, int value)
+static int searchInsert(int *values, int count, int value)
 {
     int result = int_array_binary_search(values, 0, count, value);
 
