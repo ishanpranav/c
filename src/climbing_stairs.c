@@ -6,7 +6,7 @@
  * @param n the one-based position in the sequence to compute
  * @return the element of the sequence
 */
-int climbStairs(int n)
+static int climbStairs(int n)
 {
     if (n <= 2)
     {

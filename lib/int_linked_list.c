@@ -15,9 +15,9 @@ struct IntLinkedListNode
     struct IntLinkedListNode *next;
 };
 
-struct IntLinkedList *int_linked_list()
+IntLinkedList int_linked_list()
 {
-    struct IntLinkedList *instance = malloc(sizeof *instance);
+    IntLinkedList instance = malloc(sizeof *instance);
 
     instance->head = NULL;
     instance->tail = NULL;
@@ -25,19 +25,19 @@ struct IntLinkedList *int_linked_list()
     return instance;
 }
 
-struct IntLinkedListNode *int_linked_list_first(struct IntLinkedList *this)
+IntLinkedListNode int_linked_list_first(IntLinkedList this)
 {
     return this->head;
 }
 
-struct IntLinkedListNode *int_linked_list_last(struct IntLinkedList *this)
+IntLinkedListNode int_linked_list_last(IntLinkedList this)
 {
     return this->tail;
 }
 
-void int_linked_list_add(struct IntLinkedList *this, int value)
+void int_linked_list_add(IntLinkedList this, int value)
 {
-    struct IntLinkedListNode *node = malloc(sizeof *node);
+    IntLinkedListNode node = malloc(sizeof *node);
 
     node->item = value;
     node->next = NULL;
@@ -45,9 +45,7 @@ void int_linked_list_add(struct IntLinkedList *this, int value)
     int_linked_list_add_last(this, node);
 }
 
-void int_linked_list_add_last(
-    struct IntLinkedList *this,
-    struct IntLinkedListNode *node)
+void int_linked_list_add_last(IntLinkedList this, IntLinkedListNode node)
 {
     if (this->head == NULL)
     {
@@ -61,11 +59,11 @@ void int_linked_list_add_last(
     this->tail = node;
 }
 
-void int_linked_list_clear(struct IntLinkedList *this)
+void int_linked_list_clear(IntLinkedList this)
 {
     while (this->head)
     {
-        struct IntLinkedListNode *next = this->head;
+        IntLinkedListNode next = this->head;
 
         this->head = this->head->next;
 
@@ -75,19 +73,18 @@ void int_linked_list_clear(struct IntLinkedList *this)
     this->tail = NULL;
 }
 
-void finalize_int_linked_list(struct IntLinkedList *this)
+void finalize_int_linked_list(IntLinkedList this)
 {
     int_linked_list_clear(this);
     free(this);
 }
 
-struct IntLinkedListNode *int_linked_list_node_next(
-    struct IntLinkedListNode *this)
+IntLinkedListNode int_linked_list_node_next(IntLinkedListNode this)
 {
     return this->next;
 }
 
-int int_linked_list_node_value(struct IntLinkedListNode *this)
+int int_linked_list_node_value(IntLinkedListNode this)
 {
     return this->item;
 }

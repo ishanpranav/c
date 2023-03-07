@@ -12,9 +12,9 @@ struct CharStack
     char *array;
 };
 
-struct CharStack *char_stack()
+CharStack char_stack()
 {
-    struct CharStack *instance = malloc(sizeof *instance);
+    CharStack instance = malloc(sizeof *instance);
 
     instance->count = 0;
     instance->capacity = 0;
@@ -23,12 +23,12 @@ struct CharStack *char_stack()
     return instance;
 }
 
-int char_stack_count(struct CharStack *this)
+int char_stack_count(CharStack this)
 {
     return this->count;
 }
 
-static void grow(struct CharStack *this, int min)
+static void grow(CharStack this, int min)
 {
     this->capacity *= 2;
 
@@ -52,7 +52,7 @@ static void grow(struct CharStack *this, int min)
     }
 }
 
-int char_stack_ensure_capacity(struct CharStack *this, int capacity)
+int char_stack_ensure_capacity(CharStack this, int capacity)
 {
     if (this->capacity >= capacity)
     {
@@ -64,7 +64,7 @@ int char_stack_ensure_capacity(struct CharStack *this, int capacity)
     return this->capacity;
 }
 
-void char_stack_push(struct CharStack *this, char item)
+void char_stack_push(CharStack this, char item)
 {
     if (this->count == this->capacity)
     {
@@ -75,7 +75,7 @@ void char_stack_push(struct CharStack *this, char item)
     this->count++;
 }
 
-bool char_stack_try_pop(struct CharStack *this, char *result)
+bool char_stack_try_pop(CharStack this, char *result)
 {
     if (!this->count)
     {
@@ -89,7 +89,7 @@ bool char_stack_try_pop(struct CharStack *this, char *result)
     return true;
 }
 
-void finalize_char_stack(struct CharStack *this)
+void finalize_char_stack(CharStack this)
 {
     free(this->array);
     free(this);
